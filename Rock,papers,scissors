@@ -1,0 +1,77 @@
+//Robert Gholson
+//1-22-18
+//ITP 220
+import java.util.Scanner;
+
+public class Rock_paper_scissors {
+
+  
+  public static void main(String[] args) {
+  
+   // Open scanner input
+   Scanner input = new Scanner(System.in);
+
+  // Generate a random int 0,1,2
+ 
+   
+   int computer = (int)(Math.random() * 3);
+
+  // Prompt the user to enter a number 0,1,2
+  
+   System.out.print("scissor (0), rock (1), paper (2): ");  int user = input.nextInt();
+ 
+
+  System.out.print("The computer is ");
+ 
+  // closes the scanner input
+ 
+  input.close();
+  
+  // The switch statement is looking for  break
+  
+  // Computer switch statment
+  switch (computer)
+  {
+  
+    case 0: System.out.print("scissor."); break;
+   
+    
+    case 1: System.out.print("rock."); break;
+   
+    
+    case 2: System.out.print("paper."); break ;
+  }
+
+ 
+  System.out.print(" You are ");
+  
+  // user swicth statement
+  switch (user)
+  {
+  
+    
+    case 0: System.out.print("scissor"); break;
+   
+    
+    case 1: System.out.print("rock"); break;
+  
+    
+    case 2: System.out.print("paper ");
+  }
+
+  // outprint states that the match was a draw
+ 
+  if (computer == user)
+   System.out.println(" too. It is a draw");
+  else
+  {
+   boolean win = (user == 0 && computer == 2) ||
+         (user == 1 && computer == 0) || 
+         (user == 2 && computer == 1);
+   if (win)
+    System.out.println(". You won");
+   else
+    System.out.println(". You lose");
+  }
+ }
+}
