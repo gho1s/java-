@@ -1,0 +1,55 @@
+/*Robert Gholson
+ * ITP 220
+ 2-14-18
+ Write the following program that creates and uses a loop to populate a one-dimensional array that holds the even numbers between 1 and 12;*/
+public class multiplication {
+
+public static void main(String[] args) {
+
+// setting varriables
+
+  int even[] = {1,3,5,7,9,11};
+
+// setting varriables
+
+int odd[] = {2,4,6,8,10,12};
+
+// setting varriables
+
+int even_odd[][] = new int[7][7];
+
+// output with prints character space
+
+System.out.print("\t");
+
+// is comparing the length of the i variable we declared
+
+for(int i=0;i<odd.length;i++){
+
+System.out.print(odd[i]+ "\t");
+
+}
+
+System.out.println();
+
+// is comparing the length of the i variable we declared
+
+for(int i=0;i<even.length;i++){
+
+System.out.print(even[i]+"\t");
+
+for(int j=0;j<odd.length;j++){
+
+even_odd[i][j] = even[i]*odd[j];
+
+System.out.print(even[i]*odd[j]+"\t");
+
+}
+
+System.out.println();
+
+}
+
+}
+
+}
