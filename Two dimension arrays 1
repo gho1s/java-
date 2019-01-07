@@ -1,0 +1,79 @@
+/* robert gholson 
+ * ITP 220
+ * 2-18-18
+ Create a program that randomly fills a two-dimensional 6 by 8 array with integer values between 1 and 100.  */
+
+import java.util.Scanner;
+public class twodim
+{
+
+  public static void main (String args[])
+  {
+    // intializing int variables
+    int row, col, i, j;
+    
+    // contain number of variables
+    int arr[][] = new int [10][10];
+    
+    // scanner input
+    Scanner scan = new Scanner(System.in);
+    
+    // out prints the number of row in for the array
+    System.out.print("Enter Number of row for array ");
+    
+    // finding row
+    row = scan.nextInt();
+    
+    // out print the column
+    System.out.print("Enter colum for array");
+    
+    //finding column
+    col = scan.nextInt();
+    
+    // out printing elements in the array in rows & columns
+    System.out.print("Enter" +(row*col)+ " Array elements");
+    
+    // for loop statement  use the code i to refer to the int row
+    for(i=0; i<row; i++)
+      
+    { 
+      // for loop statement  use the code j to refer to the int column 
+      for(j=0; j<col; j++)
+      {
+        //
+        arr[i][j] = scan.nextInt();
+      }
+    }
+    // space between out print
+    System.out.print("The array is \n");
+    
+    for( i =0; i<row; i++)
+    {
+     
+      for (j=0; j<col; j++)
+      {
+        
+        System.out.print(arr[i][j]+ " ");
+      }
+      
+      System.out.println();
+    
+      }
+    // setting int max to arr [0][0]  in the 1st intial value of the array
+  int max = arr[0][0];
+  
+  // going threw row
+  for ( i = 0; i < arr.length; i++) 
+ 
+    // going threw column
+  { for (j = 0; j < arr[i].length; j++)
+     
+    //set if statement is the value greater than the larger number in the row or column
+    { if (arr[i][j] > max) 
+    {max = arr [i][j];
+         }}
+         }System.out.println("Maximum value " +max);
+  scan.close();
+}
+}
+      
