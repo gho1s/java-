@@ -1,0 +1,93 @@
+/*Write a program that uses objects and classes and simulates the random dealing of a five card hand from a normal 52 card deck.
+ * The program should output the five cards dealt from the 52.
+ * Make sure your program does not allow the same card to be dealt twice.
+ Robert gholson
+ ITP 220
+ 2-25-17*/ 
+
+import java.util.HashSet;
+
+import java.util.Random;
+
+public class deckofCards {
+
+ public static void main(String[] args) {
+
+// gets random
+   
+  Random r = new Random();
+
+ // hash set is used
+
+  HashSet<String> hm = new HashSet<String>();
+
+ int count = 0;
+
+ //while loop
+ 
+ while (count < 5) {
+
+// rand number is used to make up a number
+
+ int i = r.nextInt(13) + 1;
+
+ // rand number is used to make up deck type
+
+   int j = r.nextInt(4);
+
+   String a = "";
+
+      if (i == 1)
+
+// Ace
+        
+    a = "A";
+
+   else if (i == 11)
+// joker
+    a = "J";
+
+    else if (i == 12)
+// king
+    a = "K";
+
+   else if (i == 13)
+// queen
+   a = "Q";
+
+   else
+
+  a = "" + i;
+
+   
+     if (j == 0)
+//  if Hearts
+    a += " in Hearts";
+
+    else if (j == 1)
+// else if spades
+    a += " in Spades";
+
+   if (j == 2)
+// if clubs
+  a += " in Clubs";
+
+  if (j == 3)
+//  if diamdonds
+ a += " in Diamonds";
+
+  if (!hm.contains(a)) {
+
+   count++;
+
+    hm.add(a);
+
+           }
+
+       }
+
+  System.out.println(hm);
+
+   }
+
+}
