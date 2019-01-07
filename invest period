@@ -1,0 +1,26 @@
+/*A+ Finance Company guarantees a 2% monthly compounded return on your investment.
+ * You want to see how long it takes to reach a total of $10,000,000 (10 million dollars) in investment plus return.  
+ * Write a program that allows the user to enter a continuous monthly investment (Example - $500 every month) or ($1,000 every month).*/
+import java.util.Scanner;
+
+public class InvestPeriod {
+   static double finalReturn = 10000000.0;
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter your monthly Investment amount :");
+       double monthyInvst = sc.nextDouble();
+       int months = getTime(monthyInvst);
+       int years = months/12;
+       months = months%12;
+       System.out.println("Time to reach Goal : "+years+" Years, "+months+" Months");
+       sc.close();
+
+   }
+   //Recursive method to calculate return time
+   public static int getTime(double amount){
+       double compound = amount + (amount/100.0d)*2.0d;
+       if(compound>finalReturn)
+           return 1;
+       return 1 + getTime(compound);
+   }
+}
