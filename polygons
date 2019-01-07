@@ -1,0 +1,43 @@
+public class Polygons {
+ public static void main(String[] args) {
+  // Generate an polygons between 3 and 12.
+  int polygon = (int)((Math.random() * 12) + 1);
+
+  
+
+  switch (polygon)
+  {
+
+  
+    case 3: System.out.println("Triangle"); break;
+  
+   
+    case 4: System.out.println("Quadrilateral. "); break;
+ 
+    
+    case 5: System.out.println("Pentagon"); break;
+  
+    
+    case 6: System.out.println("Hexagon"); break;
+ 
+    
+    case 7: System.out.println("Heptagon"); break;
+ 
+    
+    case 8: System.out.println("Octagon"); break;
+ 
+    
+    case 9: System.out.println("Nonagon"); break;
+  
+    
+    case 10: System.out.println("Decagon"); break;
+  
+    
+    case 11: System.out.println("Enneagon"); break;
+
+    
+    case 12: System.out.println("Dodecagon");break;
+  }
+ }
+}
+
