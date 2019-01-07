@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+public class Joes_pennies
+{
+   public static void main(String[] args)
+   {
+      // get user input of item amount and amount given
+     
+     
+     Scanner input = new Scanner(System.in);
+      
+     
+     System.out.print("\nThe amount of pennies he will return to the bank: ");
+      
+     
+     double total = input.nextDouble();
+     
+
+// System.out.print("What he will get back from the bank ");
+  
+     
+      // Find number of one dollars
+     
+     double dollar = 100;
+     
+      // Find number of quarters
+     
+     double quarter = 25;
+     
+     // Find number of dimes
+     
+     double dime = 10;
+      
+    // Find number of nickels
+     
+      double nickel = 5; 
+    
+      // Find number of pennies
+           
+      double penny = 1;
+      
+     //rounding changing to the nearest cent
+    
+     double changeDue = ( (double)((int) (( total)*100)) / 100 );
+      
+     double modDollars = ( (double)((int)((changeDue % dollar)*100)) / 100);
+     
+     double modQuarters = ( (double)((int) ((modDollars % quarter)*100)) / 100 );
+     
+     double modDimes = ( (double)((int)((modDollars % dime)*100)) / 100 );
+      
+     double modNickels = ( (double)((int)((modDollars % nickel)*100)) / 100);
+      
+     double modPennies = ( (double)((int) ((modDollars % penny)*100)) / 100 );
+      
+      // count number of coins
+     
+     int numDollars = (int)((changeDue - modDollars) / (dollar));
+      
+     int numQuarters = (int)((modDollars - modQuarters) / (quarter));
+      
+     int numDimes = (int)((modQuarters - modDimes) / (dime));
+      
+     int numNickels = (int)((modDimes - modNickels) / (nickel));
+      
+     int numPennies = (int)((modNickels - modPennies) / (penny));
+      
+      // return information to user
+      
+     System.out.println("\nTotal amount of change recieved from the bank. " + changeDue);
+     
+     System.out.println("Number of dollars from the bank: " + numDollars) ;
+     
+     System.out.println("Number of quarters from the bank: " + numQuarters);
+      
+     System.out.println("Number of dimes from the bank: " + numDimes);
+     
+     System.out.println("Number of nickels from the bank: " + numNickels);
+      
+     System.out.println("Number of pennies from the bank: " + numPennies);
+      
+   }
+}
