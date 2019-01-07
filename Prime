@@ -1,0 +1,35 @@
+/*Write a program which allows the user to enter a integer. 
+ * The program should call a recursive method (a method that calls itself) that checks to see if the number is prime.
+ * The program should display whether the number is or is not prime. 
+ * Robert Gholson
+ * ITP 220
+ * 3-20-19
+*/
+import java.util.Scanner;
+
+/*you can choose any file name if you write the line as "class Prime" instead of "public class Prime"*/
+
+public class Prime
+{
+  
+boolean checkPrime(int number,int i)//function initialization that checks if a number is prime
+{
+if(number==1) //if the number is 1, it is not a prime number hence it will return false.
+{
+return false;
+}
+  
+if(number > i)//if we reach a situation that number n is equal to i, this means that no other numbers are there smaller than n and greater than 1 that divides n, hence the number is prime and it returns true
+{
+if(number % i == 0) //if number is divisible by i (number smaller than the given number but greater than 2)
+{
+return false;
+}
+else
+{
+return checkPrime(number,i+1); //if the number n is not divisible by i, it tries to check for a number greater than i that divides n
+}
+}
+return true; //if we reach a situation that no number lesser than the given number n divides n, except 1, we can conclude that it is a prime number
+  
+}
