@@ -1,0 +1,29 @@
+/* Write a method that removews the duplicate elements from an array list of integers using the following header. 
+
+public static void removeDuplicate(ArrayList list)
+
+Write a program that prompts the user to enter 10 integers to a list and displays the distinct integers separated by exactly one space.
+Jehrad Gholson 
+ITP 220
+3-9-18*/
+import java.util.ArrayList;
+
+import java.util.HashSet;
+
+import java.util.Scanner;
+
+import java.util.Set;
+
+public class RemoveDuplicate {
+
+       public void removeDuplicate(ArrayList<Integer> list)
+
+       {
+
+              Set<Integer> set = new HashSet<Integer>(list);
+
+              for(Integer i:set)
+
+                     System.out.println(i+" ");
+
+       }
